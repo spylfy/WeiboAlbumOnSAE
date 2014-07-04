@@ -12,7 +12,7 @@ WeiboAlbumOnSAE
 `http://[yourappname].sinaapp.com/access_token.html`
 4. 将开放平台应用的 AppKey，AppSecret 和授权回调地址填入 `config.py` 中，并将项目上传至 SAE。
 5. 访问 `http://[yourappname].sinaapp.com/`，获取 `access_token` 并填入 `config.py`
-6. 再次 `http://[yourappname].sinaapp.com/`，填写预设密码即可。
+6. 再次访问 `http://[yourappname].sinaapp.com/`，填写预设密码即可。
 
 设置说明
 ---
