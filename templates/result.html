@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}提交结果{% endblock %}
+
+{% block head %}
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div>
+        <p>图片预览：</p>
+        <img src="{{ pic }}" />
+        <p>您所提交的图片地址为：</p>
+        <pre><code id="url">{{ pic }}</code></pre>
+        <p>HTML代码格式为：</p>
+        <pre><code id="html">&lt;img src="{{ pic }}" /&gt;</code></pre>
+        <p>markdown代码格式为：</p>
+        <pre><code id="markdown">![]({{ pic }})</code></pre>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <script>
+        $("input[type=file]").hover(function () {;}, function () {
+            if ($("input[type=file]").val() != "") {
+                $("input[type=file]").addClass("uploading");
+                $("input[type=submit]").click();
+            }});
+    </script>
+{% endblock %}

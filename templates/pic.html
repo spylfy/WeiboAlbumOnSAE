@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}上传图片{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename = "css/pic.css") }}">
+{% endblock %}
+
+{% block content %}
+    <div>
+        <form action="pic.html" method="post" enctype="multipart/form-data">
+            <input type="file" name="pic">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <script>$("input[type=file]").hover(function () {;}, function () {
+    if ($("input[type=file]").val() != ""){
+        $("input[type=file]").addClass("uploading");
+        $("input[type=submit]").click();
+    }
+});</script>
+{% endblock %}

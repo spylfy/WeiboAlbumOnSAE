@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}身份验证{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/login.css") }}">
+{% endblock %}
+
+{% block content %}
+    {% if messages %}
+    <ul class="message">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div id="login">
+        <form action="login.html" method="post">
+            <input name="password" type="text" placeholder="Enter your password">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}
